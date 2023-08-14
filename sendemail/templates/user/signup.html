@@ -1,0 +1,13 @@
+{% if form.non_field_errors %}
+    {% for message in form.non_field_errors %}
+            {{ message }}
+    {% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <label for="email">email</label>
+    {{ form.email }}
+    <label for="password">Password</label>
+    {{ form.password }}
+    <input type="submit" />
+</form>
